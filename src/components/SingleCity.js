@@ -1,10 +1,11 @@
 import starIcon from '../assets/images/star.png';
-
-const SingleCity = () => {
+import useMeteo from '../hooks/useMeteo';
+const SingleCity = ({ city }) => {
+  const { handleAddToFavourites } = useMeteo();
   return (
     <div className="city">
-      <h2>City Name</h2>
-      <img src={starIcon} alt="city name"></img>
+      <h2>{city.city}</h2>
+      <img src={starIcon} alt="city name" onClick={() => handleAddToFavourites(city)}></img>
     </div>
   );
 };

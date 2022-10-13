@@ -1,4 +1,6 @@
-const CityInput = () => {
+import useMeteo from '../hooks/useMeteo';
+
+const CityInput = ({ cityInput, handleChangeValue, handleSearchCity }) => {
   return (
     <div className="flex justify-center ">
       <div className="mb-3 xl:w-96">
@@ -6,11 +8,14 @@ const CityInput = () => {
           <input
             type="search"
             className=" search-box form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            value={cityInput}
+            onChange={handleChangeValue}
             placeholder="Search"
             aria-label="Search"
             aria-describedby="button-addon2"
           />
           <span
+            onClick={() => handleSearchCity(cityInput)}
             className="input-group-text flex items-center px-3 py-1.5 text-base font-normal text-gray-700 text-center whitespace-nowrap rounded"
             id="basic-addon2">
             <svg
