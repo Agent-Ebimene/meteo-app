@@ -6,6 +6,8 @@ html {
   --bgColor: #e5e5e5;
   --favouritesBg: #929292;
   --transition: all 0.3s linear;
+  --headerColor: #929292;
+  --borderColor: #c4c4c4;
 }
 body {
   width: 100%;
@@ -35,9 +37,13 @@ body {
   align-items: center;
   width: 60%;
   height: 40px;
-  cursor: pointer;
 }
 
+.city-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 @media screen and (min-width: 768px) {
   .city {
     width: 50%;
@@ -47,9 +53,49 @@ body {
 .favourites {
   width: 400px;
   min-height: 100vh;
+  transition: var(--transition);
   background: var(--favouritesBg);
+  margin-left: -100%;
+}
+.favourites-visible {
+  margin-left: 0;
 }
 
 .favourites-header {
   color: #ffffff;
+}
+@media screen and (max-width: 600px) {
+  .favourites {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 600px) {
+  .close-btn {
+    display: none;
+  }
+  /* .add-favourite-btn {
+    display: none;
+  } */
+}
+
+/*
+=============
+Details Page
+=============
+*/
+.city-header {
+  color: var(--headerColor);
+}
+.select-btn {
+  padding-inline: 1rem;
+  color: var(--headerColor);
+  outline: none;
+  border: 1px solid var(--borderColor);
+}
+.select-item {
+  color: var(--headerColor);
+  height: 40px;
 }
