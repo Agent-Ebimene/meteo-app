@@ -1,16 +1,13 @@
-import React from 'react';
-// import useMeteo from '../hooks/useMeteo';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AppContext } from '../context/AppContext';
 
 import { FaTimes } from 'react-icons/fa';
 
-const Favourites = ({
-  favourites,
-  handleDeleteFromFavourites,
-  handleRemoveFavouritePage,
-  isFavouritePage,
-  getCityWeatherDetails
-}) => {
-  console.log('re-rendered');
+const Favourites = () => {
+  const navigate = useNavigate();
+  const { favourites, isFavouritePage, handleDeleteFromFavourites, handleRemoveFavouritePage } =
+    useContext(AppContext);
 
   return (
     <div className={`py-10 favourites px-3  ${isFavouritePage ? 'favourites-visible' : ''}`}>
@@ -26,7 +23,7 @@ const Favourites = ({
           <h3
             className="text-white text-2xl px-1 cursor-pointer"
             onClick={() => {
-              getCityWeatherDetails(favourite);
+              navigate(`details/${favourite.city}`, { state: { favourite } });
             }}>
             {favourite.city}
           </h3>

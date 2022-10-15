@@ -1,12 +1,17 @@
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import starIcon from '../assets/images/star.png';
+import { AppContext } from '../context/AppContext';
 
-const SingleCity = ({ city, handleGetDetails, handleAddToFavourites }) => {
+const SingleCity = ({ city }) => {
+  const { handleAddToFavourites } = useContext(AppContext);
+  const navigate = useNavigate();
   return (
     <div className="city">
       <div
         className="cursor-pointer"
         onClick={() => {
-          handleGetDetails(city);
+          navigate(`details/${city.city}`, { state: { city } });
         }}>
         {' '}
         <h2>{city.city}</h2>

@@ -6,7 +6,6 @@ html {
   --bgColor: #e5e5e5;
   --favouritesBg: #929292;
   --transition: all 0.3s linear;
-  --headerColor: #929292;
   --borderColor: #c4c4c4;
 }
 body {
@@ -87,15 +86,25 @@ Details Page
 =============
 */
 .city-header {
-  color: var(--headerColor);
+  color: var(--favouritesBg);
+  margin-bottom: 1rem;
 }
 .select-btn {
   padding-inline: 1rem;
-  color: var(--headerColor);
+  margin-bottom: 2rem;
+  color: var(--favouritesBg);
   outline: none;
   border: 1px solid var(--borderColor);
 }
 .select-item {
-  color: var(--headerColor);
-  height: 40px;
+  color: var(--favouritesBg);
+  cursor: pointer;
+}
+
+.loading-spinner {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
