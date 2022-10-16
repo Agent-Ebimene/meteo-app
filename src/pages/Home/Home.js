@@ -4,11 +4,12 @@ import cities from '../../gradovi.json';
 import CityInput from '../../components/CityInput';
 import SingleCity from '../../components/SingleCity';
 import Favourites from '../../components/Favourites';
-import Button from '../../components/Button';
+import FavouritesButton from '../../components/FavouritesButton';
+import SettingsButton from '../Settings/SettingButton';
 
 const Home = () => {
   const [cityInput, setCityInput] = useState('');
-  const { showFavouritePage } = useContext(AppContext);
+  const { showFavouritesPage } = useContext(AppContext);
   const handleSearchCity = (value) => {
     setCityInput(value);
   };
@@ -19,8 +20,9 @@ const Home = () => {
 
   return (
     <div className="flex flex-row space-between ">
-      {!showFavouritePage && <Button text="Favourites" />}
-      {showFavouritePage && <Favourites />}
+      {!showFavouritesPage && <FavouritesButton />}
+      <SettingsButton />
+      {showFavouritesPage && <Favourites />}
       <div className="flex flex-col items-center w-full py-24">
         <h1 className="  text-center text-4xl m-5">Meteo App</h1>
 

@@ -1,21 +1,23 @@
 import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AppContext } from '../context/AppContext';
-
 import { FaTimes } from 'react-icons/fa';
+
+import { AppContext } from '../context/AppContext';
+import SettingsButton from '../pages/Settings/SettingButton';
 
 const Favourites = () => {
   const navigate = useNavigate();
 
-  const { favourites, showFavouritePage, handleDeleteFromFavourites, handleRemoveFavouritePage } =
+  const { favourites, showFavouritesPage, handleDeleteFromFavourites, handleRemoveFavouritesPage } =
     useContext(AppContext);
 
   return (
-    <div className={`py-10 favourites px-3  ${showFavouritePage ? 'favourites-visible' : ''}`}>
+    <div className={`py-10 favourites px-3  ${showFavouritesPage ? 'favourites-visible' : ''}`}>
       <h2 className=" text-4xl text-white favourites-header ">Favourites</h2>
+      <SettingsButton />
       <FaTimes
         className="fixed top-12 right-10 text-3xl text-red-600 cursor-pointer close-btn"
-        onClick={handleRemoveFavouritePage}
+        onClick={handleRemoveFavouritesPage}
       />
       {favourites.map((favourite, i) => (
         <div
@@ -24,7 +26,7 @@ const Favourites = () => {
           <h3
             className="text-white text-2xl px-1 cursor-pointer"
             onClick={() => {
-              navigate(`details/${favourite.city}`, { state: { city: favourite } });
+              navigate(`/details/${favourite.city}`, { state: { city: favourite } });
             }}>
             {favourite.city}
           </h3>

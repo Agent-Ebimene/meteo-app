@@ -1,12 +1,16 @@
-# Getting Started with Create React App
+# Meteo app for displaying hourly/daily eather variables of a city
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Eslint and Prettier were set up for better development experience.
+
+### A LoadingSpinner package was added for better User experience.
+
+## To run this project on your local machine
 
 In the project directory, you can run:
 
-### `npm start`
+### clone this repository and run `npm install ` to get all the packages.
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

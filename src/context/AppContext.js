@@ -5,35 +5,36 @@ export const AppContext = createContext();
 export const AppContextProvider = ({ children }) => {
   const [weatherData, setWeatherData] = useState();
   const [favourites, setFavourites] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [showFavouritePage, setShowFavouritePage] = useState(false);
-  const handleFavouritePage = () => {
-    setShowFavouritePage(true);
+  const [showFavouritesPage, setShowFavouritesPage] = useState(false);
+
+  const handleFavouritesPage = () => {
+    setShowFavouritesPage(true);
   };
-  const handleRemoveFavouritePage = () => {
-    setShowFavouritePage(false);
+
+  const handleRemoveFavouritesPage = () => {
+    setShowFavouritesPage(false);
   };
+
   const handleAddToFavourites = (city) => {
-    console.log(favourites);
     if (!(favourites.filter((item) => item.city === city.city).length > 0)) {
       setFavourites([...favourites, { ...city }]);
     }
   };
+
   const handleDeleteFromFavourites = (city) => {
     const remainingFavourites = favourites.filter((item) => item.city !== city);
     setFavourites(remainingFavourites);
   };
+
   return (
     <AppContext.Provider
       value={{
         weatherData,
-        showFavouritePage,
+        showFavouritesPage,
         favourites,
-        isLoading,
-        setIsLoading,
         setWeatherData,
-        handleFavouritePage,
-        handleRemoveFavouritePage,
+        handleFavouritesPage,
+        handleRemoveFavouritesPage,
         handleAddToFavourites,
         handleDeleteFromFavourites
       }}>
