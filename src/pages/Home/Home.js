@@ -15,7 +15,6 @@ const Home = () => {
 
   const handleChangeValue = (e) => {
     setCityInput(e.target.value);
-    console.log('Search input');
   };
 
   return (

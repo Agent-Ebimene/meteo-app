@@ -24,7 +24,7 @@ const Favourites = () => {
           <h3
             className="text-white text-2xl px-1 cursor-pointer"
             onClick={() => {
-              navigate(`details/${favourite.city}`, { state: { favourite } });
+              navigate(`details/${favourite.city}`, { state: { city: favourite } });
             }}>
             {favourite.city}
           </h3>
