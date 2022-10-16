@@ -5,6 +5,8 @@ import { AppContext } from '../../context/AppContext';
 import Favourites from '../../components/Favourites';
 import Button from '../../components/Button';
 import LoadingSpinner from '../../components/LoadingSpinner';
+import HourlyDetails from '../../components/HourlyDetails';
+import DailyDetails from '../../components/DailyDetails';
 import { getFocastUrl } from '../../services/services';
 
 const CityDetails = () => {
@@ -54,7 +56,7 @@ const CityDetails = () => {
           {!showFavouritePage && <Button />}
           {showFavouritePage && <Favourites />}
           <div className="city-details  my-5 px-3 flex flex-col items-center w-full py-2">
-            <h2 className="text-2xl city-header text-center">Meteorologic data for {city}</h2>
+            <h2 className="text-2xl city-header text-center mt-10">Meteorologic data for {city}</h2>
             <select
               className="w-1/2 h-8 cursor-pointer rounded select-btn text-2xl"
               value={selectedInterval}
@@ -66,6 +68,8 @@ const CityDetails = () => {
                 Hourly View
               </option>
             </select>
+            {selectedInterval === 'hourly' && <HourlyDetails />}
+            {selectedInterval === 'daily' && <DailyDetails />}
           </div>
         </div>
       )}

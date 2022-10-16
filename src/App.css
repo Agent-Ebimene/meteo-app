@@ -115,3 +115,11 @@ Details Page
   align-items: center;
   justify-content: center;
 }
+
+@media screen and (max-width:768px){
+  .weather-details{
+  display:flex;
+  flex-direction: column;
+  }
+
+}
