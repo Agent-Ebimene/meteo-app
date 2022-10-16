@@ -5,13 +5,13 @@ export const AppContext = createContext();
 export const AppContextProvider = ({ children }) => {
   const [weatherData, setWeatherData] = useState();
   const [favourites, setFavourites] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [isFavouritePage, setIsFavouritePage] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showFavouritePage, setShowFavouritePage] = useState(false);
   const handleFavouritePage = () => {
-    setIsFavouritePage(true);
+    setShowFavouritePage(true);
   };
   const handleRemoveFavouritePage = () => {
-    setIsFavouritePage(false);
+    setShowFavouritePage(false);
   };
   const handleAddToFavourites = (city) => {
     console.log(favourites);
@@ -27,10 +27,10 @@ export const AppContextProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         weatherData,
-        isFavouritePage,
+        showFavouritePage,
         favourites,
-        loading,
-        setLoading,
+        isLoading,
+        setIsLoading,
         setWeatherData,
         handleFavouritePage,
         handleRemoveFavouritePage,

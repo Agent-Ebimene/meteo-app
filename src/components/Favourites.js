@@ -6,11 +6,12 @@ import { FaTimes } from 'react-icons/fa';
 
 const Favourites = () => {
   const navigate = useNavigate();
-  const { favourites, isFavouritePage, handleDeleteFromFavourites, handleRemoveFavouritePage } =
+
+  const { favourites, showFavouritePage, handleDeleteFromFavourites, handleRemoveFavouritePage } =
     useContext(AppContext);
 
   return (
-    <div className={`py-10 favourites px-3  ${isFavouritePage ? 'favourites-visible' : ''}`}>
+    <div className={`py-10 favourites px-3  ${showFavouritePage ? 'favourites-visible' : ''}`}>
       <h2 className=" text-4xl text-white favourites-header ">Favourites</h2>
       <FaTimes
         className="fixed top-12 right-10 text-3xl text-red-600 cursor-pointer close-btn"

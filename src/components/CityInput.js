@@ -3,17 +3,19 @@ import useMeteo from '../hooks/useMeteo';
 const CityInput = ({ cityInput, handleChangeValue, handleSearchCity }) => {
   return (
     <div className="flex justify-center ">
-      <div className="mb-3 xl:w-96">
-        <div className="input-group relative flex flex-wrap items-stretch w-full mb-4 rounded">
+      <div className="mb-3 xl:w-96 search-input-container">
+        <div className="input-group items-stretch w-full mb-4 rounded">
           <input
             type="search"
-            className=" search-box form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            className=" search-input form-control relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
             value={cityInput}
             onChange={handleChangeValue}
             placeholder="Search"
             aria-label="Search"
             aria-describedby="button-addon2"
           />
+        </div>
+        <div className="search-icon">
           <span
             onClick={() => handleSearchCity(cityInput)}
             className="input-group-text flex items-center px-3 py-1.5 text-base font-normal text-gray-700 text-center whitespace-nowrap rounded"
@@ -23,7 +25,7 @@ const CityInput = ({ cityInput, handleChangeValue, handleSearchCity }) => {
               focusable="false"
               data-prefix="fas"
               data-icon="search"
-              className="w-4"
+              className="w-5"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512">

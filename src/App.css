@@ -22,9 +22,16 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-.search-box {
+.search-input-container {
+  display: flex;
+  align-items: center;
+}
+.search-input {
   background: var(--bgColor);
+}
+.search-icon {
+  margin-top: -0.8rem;
+  margin-left: -0.2rem;
 }
 .city {
   padding-inline: 1rem;

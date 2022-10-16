@@ -8,7 +8,7 @@ import Button from '../../components/Button';
 
 const Home = () => {
   const [cityInput, setCityInput] = useState('');
-  const { isFavouritePage } = useContext(AppContext);
+  const { showFavouritePage } = useContext(AppContext);
   const handleSearchCity = (value) => {
     setCityInput(value);
   };
@@ -20,8 +20,8 @@ const Home = () => {
 
   return (
     <div className="flex flex-row space-between ">
-      {!isFavouritePage && <Button />}
-      {isFavouritePage && <Favourites />}
+      {!showFavouritePage && <Button text="Favourites" />}
+      {showFavouritePage && <Favourites />}
       <div className="flex flex-col items-center w-full py-24">
         <h1 className="  text-center text-4xl m-5">Meteo App</h1>
 
