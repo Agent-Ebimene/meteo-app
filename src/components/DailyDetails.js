@@ -1,6 +1,6 @@
 const DailyDetails = ({ weatherData }) => {
   return (
-    <div className="flex flex-col sm:my-3 space-x-6 my-12 px-2">
+    <div className="flex flex-col sm:my-3 my-12 px-2">
       <div>
         <h3>Weathercode</h3>
         <h3>Maximum Temperature (2 m)</h3>

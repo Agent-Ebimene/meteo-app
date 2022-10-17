@@ -19,7 +19,7 @@ const CityDetails = () => {
   const { showFavouritesPage } = useContext(AppContext);
 
   const [isLoading, setIsLoading] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState(null);
   const [selectedInterval, setSelectedInterval] = useState('');
 
   const getWeatherVariables = useCallback(async (url) => {

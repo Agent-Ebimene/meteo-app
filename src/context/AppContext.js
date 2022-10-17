@@ -3,7 +3,6 @@ import { createContext, useState } from 'react';
 export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
-  const [weatherData, setWeatherData] = useState();
   const [favourites, setFavourites] = useState([]);
   const [showFavouritesPage, setShowFavouritesPage] = useState(false);
 
@@ -29,10 +28,9 @@ export const AppContextProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
-        weatherData,
         showFavouritesPage,
         favourites,
-        setWeatherData,
+
         handleFavouritesPage,
         handleRemoveFavouritesPage,
         handleAddToFavourites,
