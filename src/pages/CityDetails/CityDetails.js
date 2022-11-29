@@ -35,12 +35,10 @@ const CityDetails = () => {
     }
   }, []);
 
-  useEffect(() => {
-    console.log('weatherData', weatherData);
-  }, [weatherData]);
+
 
   useEffect(() => {
-    console.log('selectedInterval', selectedInterval, typeof selectedInterval);
+    
     if (selectedInterval) {
       const url = getFocastUrl({ type: selectedInterval, lat, lng });
       getWeatherVariables(url);
